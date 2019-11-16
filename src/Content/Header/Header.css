@@ -1,0 +1,144 @@
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+}
+
+.box-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin: 16px;
+}
+
+.profile-card {
+    padding: 32px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    max-width: 70%;
+    border-radius: 32px 0 0 32px;
+    background-color: rgba(245, 215, 110, 1);
+}
+
+.info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-left: 4px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    height: 25%;
+    min-width: min-content;
+}
+
+.section-line {
+    width: 30px;
+    height: 20px;
+    background-color: rgba(245, 215, 110, 1);
+}
+
+.section-text {
+    justify-content: flex-start;
+    display: flex;
+    font-size: 24px;
+    font-weight: 500;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    color: #000;
+    padding-left: 12px;
+    width: 120px;
+    background-color: rgba(245, 215, 110, 1);
+}
+
+#section-text-4 {
+    margin-bottom: 0;
+    border-radius: 0 0 18px 0;
+}
+
+#section-text-1 {
+    margin-top: 0;
+    border-radius: 0 18px 0 0;
+}
+
+.title {
+    display: flex;
+    margin: 0 0 14px 0;
+    justify-content: center;
+    font-size: 54px;
+    color: rgba(0, 0, 0);
+}
+
+.description {
+    justify-content: center;
+    width: 100%;
+    margin: 14px;
+    font-size: 24px;
+    color: rgba(0, 0, 0);
+}
+
+.image {
+    background-image: url('../../images/face.png');
+    background-size: cover;
+    min-width: 265px;
+    min-height: 300px;
+    border-radius: 50%;
+}
+
+.melody {
+    display: flex;
+    widows: 100%;
+    margin: 18px 0 0 0;
+}
+
+.note {
+    background-color: #000;
+    width: 50px;
+    height: 50px;
+    color: rgba(245, 215, 110, 1);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note:hover {
+    transform: rotate(360deg);
+    transition: 0.5s;
+}
+
+.type-text {
+    z-index: 2;
+    width: 70%;
+    height: 20px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    font-weight: 500;
+    color: rgba(245, 215, 110, 1);
+}
+
+.type-text p {
+    margin: 0;
+}

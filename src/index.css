@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(245, 215, 110, 1);
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+#matrix {
+  position: absolute;
+  z-index: 0;
+}
+
+/*  scroll */
+
+@-webkit-keyframes updown {
+  from, to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@-moz-keyframes updown {
+  from, to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@-o-keyframes updown {
+  from, to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes updown {
+  from, to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.scroll-down {
+  background-color: transparent;
+  background-image: url('./images/array_down.png');
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 10px;
+  right: 50vw;
+  outline: 0 !important;
+  cursor: pointer;
+  padding: 15px;
+  -o-animation: updown 1s ease-out infinite;
+  -moz-animation: updown 1s ease-out infinite;
+  -webkit-animation: updown 1s ease-out infinite;
+  animation: updown 1s ease-out infinite;
+}
+
+.scroll-down:hover {
+  transition: all .2s ease-out;
+  -o-animation: none;
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(245, 215, 110, 1);
+  border-radius: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-button {
+  background: rgba(245, 215, 110, 1);
+  border-radius: 50%;
+  height: 10px;
+}
