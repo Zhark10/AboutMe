@@ -1,83 +1,88 @@
+import { COLORS } from "../global/colors";
 
-let center_x, center_y, radius = 40, bars: any,
-    x_end, y_end, bar_height, randomValue, bar_width: any,
-    frequency_array: Uint8Array, audio, context, source, analyser: any, rads, x, y;
+const INITIAL = {
+    bars: 150,
+    bar_width: 5,
+    canvasWidth: 300,
+    canvasHeight: 280,
+    lineColor: COLORS.main,
+}
 
-bars = 50;
-bar_width = 5;
+export function initAudioPlayer(musicSrc: any, ref: React.RefObject<HTMLCanvasElement>) {
 
-export function initPage(musicSrc: any, ref: React.RefObject<any>) {
-
-    audio = new Audio();
-    context = new (window.AudioContext)();
-    analyser = context.createAnalyser();
+    const audio = new Audio();
+    const context = new (window.AudioContext)();
+    const source = context.createMediaElementSource(audio);
+    const analyser = context.createAnalyser();
+    const frequency_array = new Uint8Array(analyser.frequencyBinCount);
 
     audio.src = musicSrc;
-    source = context.createMediaElementSource(audio);
+    audio.play();
+
     source.connect(analyser);
     analyser.connect(context.destination);
 
-
-    frequency_array = new Uint8Array(analyser.frequencyBinCount);
-
-    audio.play();
-
-    animationLooper(ref);
+    animationLooper(ref, analyser, frequency_array);
 }
 
-function animationLooper(canvas: React.RefObject<HTMLCanvasElement>) {
-
-
-    canvas.current!.width = window.innerWidth;
-
+function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: AnalyserNode, frequency_array: Uint8Array) {
     let ctx = canvas.current!.getContext("2d");
-    // set to the size of device
-    canvas.current!.width = 250;
-    canvas.current!.height = 250;
+    let center_x = INITIAL.canvasWidth / 2;
+    let center_y = INITIAL.canvasHeight / 2;
 
-    // set to the size of device
-    center_x = canvas.current!.width / 2;
-    center_y = canvas.current!.height / 2;
+    canvas.current!.width = INITIAL.canvasWidth;
+    canvas.current!.height = INITIAL.canvasHeight;
 
     // style the background
-    ctx!.fillRect(0, 0, canvas.current!.width, canvas.current!.height);
+    ctx!.fillRect(0, 0, INITIAL.canvasWidth, INITIAL.canvasHeight);
+    ctx!.fillStyle = COLORS.main;
 
     //draw a circle
     ctx!.beginPath();
     ctx!.stroke();
 
     analyser.getByteFrequencyData(frequency_array);
-    for (let i: any = 0; i < bars; i++) {
+    for (let i: number = 0; i < INITIAL.bars; i++) {
 
         //divide a circle into equal parts
-        rads = Math.PI * 2 / bars;
+        const rads = Math.PI * 2 / INITIAL.bars;
 
-        bar_height = frequency_array[i] * 0.4;
-        randomValue = frequency_array[i] * 0.1;
+        const bar_height = frequency_array[i] * 0.3;
+        const randomRadius = frequency_array[20] * 0.3;
+
+        // if(frequency_array[])
+        if (randomRadius < 55) {
+            INITIAL.bar_width = 1
+        } else if (randomRadius > 55 && randomRadius < 65) {
+            INITIAL.bar_width = 3
+        } else {
+            INITIAL.bar_width = 5
+        }
+
+        const _center_x = center_x;
+        const _center_y = center_y;
 
         // set coordinates
-        x = center_x + Math.cos(rads * i) * (radius);
-        y = center_y + Math.sin(rads * i) * (radius);
-        x_end = center_x + Math.cos(rads * i) * (radius + bar_height);
-        y_end = center_y + Math.sin(rads * i) * (radius + bar_height);
+        const x = _center_x + Math.cos(rads * i) * (randomRadius);
+        const y = _center_y + Math.sin(rads * i) * (randomRadius);
+        const x_end = _center_x + Math.cos(rads * i) * (randomRadius + bar_height);
+        const y_end = _center_y + Math.sin(rads * i) * (randomRadius + bar_height);
 
         //draw a bar
-        drawBar(x, y, x_end, y_end, bar_width, ctx!);
+        drawBar(x, y, x_end, y_end, ctx!);
 
     }
-    window.requestAnimationFrame(() => animationLooper(canvas));
+    window.requestAnimationFrame(() => animationLooper(canvas, analyser, frequency_array));
+
 }
 
-// for drawing a bar
-function drawBar(x1: any, y1: any, x2: any, y2: any, width: any, ctx: CanvasRenderingContext2D) {
+function drawBar(x1: number, y1: number, x2: number, y2: number, ctx: CanvasRenderingContext2D) {
 
-    const lineColor = "rgba(245, 215, 110, 1)";
 
-    ctx.strokeStyle = lineColor;
-    ctx.lineWidth = width;
+    ctx.strokeStyle = INITIAL.lineColor;
+    ctx.lineWidth = INITIAL.bar_width;
     ctx.beginPath();
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.stroke();
-    ctx.fillStyle = "#fff"
 }

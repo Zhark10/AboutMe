@@ -18,7 +18,7 @@
     padding: 32px;
     display: flex;
     align-content: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: nowrap;
     align-items: center;
     max-width: 70%;
@@ -28,56 +28,9 @@
 
 .info {
     height: 100%;
+    width: 45%;
     display: flex;
     flex-direction: column;
-}
-
-.sections {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
-    justify-content: space-evenly;
-    height: 100%;
-    margin-left: 4px;
-}
-
-.section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    height: 25%;
-    min-width: min-content;
-}
-
-.section-line {
-    width: 30px;
-    height: 20px;
-    background-color: rgba(245, 215, 110, 1);
-}
-
-.section-text {
-    justify-content: flex-start;
-    display: flex;
-    font-size: 24px;
-    font-weight: 500;
-    align-items: center;
-    height: 100%;
-    cursor: pointer;
-    color: #000;
-    padding-left: 12px;
-    width: 120px;
-    background-color: rgba(245, 215, 110, 1);
-}
-
-#section-text-4 {
-    margin-bottom: 0;
-    border-radius: 0 0 18px 0;
-}
-
-#section-text-1 {
-    margin-top: 0;
-    border-radius: 0 18px 0 0;
 }
 
 .title {
@@ -91,7 +44,7 @@
 .description {
     justify-content: center;
     width: 100%;
-    margin: 14px;
+    margin: 14px 0;
     font-size: 24px;
     color: rgba(0, 0, 0);
 }
@@ -115,7 +68,7 @@
     width: 50px;
     height: 50px;
     color: rgba(245, 215, 110, 1);
-    font-size: 18px;
+    font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,4 +94,16 @@
 
 .type-text p {
     margin: 0;
+}
+
+
+.music-title {
+    font-size: 24px;
+    font-weight: 500;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 16px;
+    text-align: center;
+    background-color: #000;
+    color: rgba(245, 215, 110, 1);
 }

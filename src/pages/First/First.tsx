@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import './First.css';
-import Header from '../../Content/Header/Header';
-import Main from '../../Content/Main/Main';
+import Header from '../../content/Header/Header';
+import Main from '../../content/Main/Main';
 import { handleScroll } from '../../utils/scroll';
 
 const First: React.FC = () => {

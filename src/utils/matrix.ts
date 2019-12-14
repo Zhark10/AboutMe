@@ -1,3 +1,5 @@
+import { COLORS } from "../global/colors";
+
 export const matrixRun = () => {
     let canvas: any = document.querySelector("#matrix");
 
@@ -31,7 +33,7 @@ export const matrixRun = () => {
     }
 
     function showLetters() {
-        ctx.fillStyle = "rgba(235, 235, 235, 0.6)";
+        ctx.fillStyle = COLORS.main;
         ctx.font = font_size + "px arial";
 
         for (let i = 0; i < drops.length; i++) {
