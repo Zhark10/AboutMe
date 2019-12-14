@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Main.css';
 import { handleScroll } from '../../utils/scroll';
-import { game } from './game';
 import { initPage } from '../../utils/player';
+const musicSrc = require('../../resources/Ghinzu.mp3');
+// const musicSrc = require('../../resources/Alter_Ego.mp3');
+
 
 const Main: React.FC = () => {
 
+    const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
     useEffect(()=>{
-        initPage()   
+        initPage(musicSrc, canvas)   
     }, [])
 
     return (
         <div className="first-content">
             <div className="scroll-down" onClick={handleScroll} data-target-id="target2"></div>
-            <canvas id="renderer"></canvas>
+            <canvas ref={canvas}></canvas>
         </div>
     );
 }
