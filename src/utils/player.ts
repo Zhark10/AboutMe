@@ -8,7 +8,7 @@ const INITIAL = {
     lineColor: COLORS.main,
 }
 
-export function initAudioPlayer(musicSrc: any, ref: React.RefObject<HTMLCanvasElement>) {
+export const initAudioPlayer = (musicSrc: any, ref: React.RefObject<HTMLCanvasElement>, setColor: any) => {
 
     const audio = new Audio();
     const context = new (window.AudioContext)();
@@ -22,10 +22,10 @@ export function initAudioPlayer(musicSrc: any, ref: React.RefObject<HTMLCanvasEl
     source.connect(analyser);
     analyser.connect(context.destination);
 
-    animationLooper(ref, analyser, frequency_array);
+    animationLooper(ref, analyser, frequency_array, setColor);
 }
 
-function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: AnalyserNode, frequency_array: Uint8Array) {
+function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: AnalyserNode, frequency_array: Uint8Array, setColor: any) {
     let ctx = canvas.current!.getContext("2d");
     let center_x = INITIAL.canvasWidth / 2;
     let center_y = INITIAL.canvasHeight / 2;
@@ -53,10 +53,17 @@ function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: A
         // if(frequency_array[])
         if (randomRadius < 55) {
             INITIAL.bar_width = 1
+            INITIAL.lineColor = COLORS.main
+            setColor(COLORS.main);
+            
         } else if (randomRadius > 55 && randomRadius < 65) {
             INITIAL.bar_width = 3
+            INITIAL.lineColor = 'blue'
+            setColor('blue');
         } else {
             INITIAL.bar_width = 5
+            INITIAL.lineColor = 'green'
+            setColor('green');
         }
 
         const _center_x = center_x;
@@ -72,7 +79,7 @@ function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: A
         drawBar(x, y, x_end, y_end, ctx!);
 
     }
-    window.requestAnimationFrame(() => animationLooper(canvas, analyser, frequency_array));
+    window.requestAnimationFrame(() => animationLooper(canvas, analyser, frequency_array, setColor));
 
 }
 

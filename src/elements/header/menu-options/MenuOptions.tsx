@@ -1,7 +1,12 @@
 import React from 'react';
 import './MenuOptions.css';
+import { string } from 'prop-types';
 
-const MenuOptions: React.FC = () => {
+interface Props {
+    color: string;
+}
+
+const MenuOptions: React.FC<Props> = ({ color }) => {
     const options = [
         { title: 'About me' },
         { title: 'Hobby' },
@@ -12,7 +17,7 @@ const MenuOptions: React.FC = () => {
         <div className="menu">
             {options.map((item: { title: string }) => (
                 <div className="option">
-                    <div className="option-dot" />
+                    <div className="option-dot"/>
                     <div className="option-line" />
                     <div className="option-text">{item.title}</div>
                 </div>

@@ -1,6 +1,6 @@
 import { COLORS } from "../global/colors";
 
-export const matrixRun = () => {
+export const matrixRun = (color: string) => {
     let canvas: any = document.querySelector("#matrix");
 
     let ctx = canvas.getContext('2d');

@@ -1,33 +1,45 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import './Header.css';
 import { matrixRun } from '../../utils/matrix';
 import Typical from 'react-typical';
-import { initAudioPlayer } from '../../utils/player';
 import MenuOptions from '../../elements/header/menu-options/MenuOptions';
+import ReactCardFlip from 'react-card-flip';
+import { ITrack } from './models/models.types';
+import { TRACKS, PHONE, MESSAGES } from './models/models';
+import { initAudioPlayer } from '../../utils/player';
+import { ColorContext } from '../ColorProvider/ColorProvider';
+
 
 const Header: React.FC = () => {
     const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
+    const [isFlipped, setFlipped] = useState(false);
+    const [track, setTrack] = useState(null as ITrack | null);
+    const {
+        theme: [color, setColor]
+    } = useContext(ColorContext as any);
+
+    useEffect(() => matrixRun(color), [])
 
     useEffect(() => {
-        async function getAudioPlayer() {
-            const musicSrc = require('../../resources/Alter_Ego.mp3');
-            // const musicSrc = await require('../../resources/Ghinzu.mp3');
-            initAudioPlayer(musicSrc, canvas)
+
+        if (track && track.src) {
+            initAudioPlayer(track.src, canvas, setColor)
+
+            setTimeout(() => {
+                setFlipped(true);
+                setTimeout(() => {
+                    setFlipped(false)
+                }, 2000);
+            }, 2000);
+        } else {
+            setTrack(TRACKS[1])
         }
-        getAudioPlayer();
-        matrixRun();
-    })
+    }, [track])
 
-    const messages = [
-        "Ghbdtn! Rfr ndjb ltkf& 👋", 1000,
-        "Черт, опять раскладка 🤪", 1000,
-        "Как твои дела? 🙂", 1000,
-        "Хотя, раз ты здесь, скоро твое настроение поднимется с большой вероятностью 🙂", 1000,
-        "Мне кажется, я уже немного зануда... 🤔", 1000,
-        "Предлагаю продолжить 😊", 600000,
-    ];
-
-    const phone = "89600981865".split("");
+    const handleClick = (e: any) => {
+        e.preventDefault();
+        setFlipped(isFlipped => !isFlipped);
+    }
 
     return (
         <>
@@ -40,21 +52,32 @@ const Header: React.FC = () => {
                             <div className="description">frontent-developer of the company <img width={150} height={18} src={require('../../images/citronium.png')} alt="Citronium" />, 24 y.o.</div>
                             <div className="description"><strong>My skills:</strong> TS, JS, React, RN, AngularJS, Redux, HTML5, CSS3, SASS, Webpack, git, etc.</div>
                             <div className="melody">
-                                {phone.map((item: string) => (
-                                    <div className="note">{item}</div>
+                                {PHONE.map((item: string) => (
+                                    <div className="note" style={{color: color}}>{item}</div>
                                 ))}
                             </div>
                         </div>
-                        <div className="player">
-                            <div className="music-title">My top music today</div>
-                            <canvas ref={canvas} />
-                        </div>
+
+
+                        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
+                            <div className="player" onClick={handleClick}>
+                                <div className="music-title" style={{color: color}}>My top music today</div>
+                                <canvas ref={canvas} />
+                            </div>
+                            <div className="player" onClick={handleClick}>
+                                <div className="back-side-flip">
+                                    <div className="music-title" style={{color: color}}>Author: N'to</div>
+                                    <div className="music-title" style={{color: color}}>Title: "Alter Ego"</div>
+                                </div>
+                            </div>
+                        </ReactCardFlip>
+
                     </div>
-                    <MenuOptions />
+                    <MenuOptions color={color}/>
                 </div>
                 <div className="type-text">
                     <Typical
-                        steps={messages}
+                        steps={MESSAGES}
                         loop={Infinity}
                         wrapper="p"
                     />
