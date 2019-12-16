@@ -2,18 +2,18 @@ import React, { useEffect, useRef, useState, useContext } from 'react';
 import './Header.css';
 import { matrixRun } from '../../utils/matrix';
 import Typical from 'react-typical';
-import MenuOptions from '../../elements/header/menu-options/menu-options';
+import MenuOptions from '../../components/elements/header/menu-options/menu-options';
 import ReactCardFlip from 'react-card-flip';
 import { ITrack } from './models/models.types';
 import { TRACKS, PHONE, MESSAGES } from './models/models';
 import { initAudioPlayer } from '../../utils/player';
-import { ColorContext } from '../ColorProvider/ColorProvider';
-import NoteSvg from '../../elements/header/note-svg/note-svg';
+import { ColorContext } from '../../ColorProvider';
+import NoteSvg from '../../components/elements/header/note-svg/note-svg';
+import Cable from '../../components/shared/cable';
+import ProfileInfo from '../../components/elements/header/profile-info/profile-info';
+import AudioPlayer from '../../components/elements/header/audio-player/audio-player';
 
 const Header: React.FC = () => {
-    const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
-    const [isFlipped, setFlipped] = useState(false);
-    const [track, setTrack] = useState(null as ITrack | null);
 
     const {
         theme: [color, setColor]
@@ -21,69 +21,34 @@ const Header: React.FC = () => {
 
     useEffect(matrixRun, []);
 
-    useEffect(() => {
-        if (track && track.src) {
-            initAudioPlayer(track.src, canvas, setColor)
-            setTimeout(() => {
-                setFlipped(true);
-                setTimeout(() => setFlipped(false), 2000);
-            }, 2000);
-        } else {
-            let current = TRACKS[Math.floor(Math.random() * TRACKS.length)];
-            setTrack(current)
-        }
-    }, [track, setColor]);
 
-    const handleClick = (e: any) => {
-        e.preventDefault();
-        setFlipped(isFlipped => !isFlipped);
-    }
 
     return (
-        track &&
-        <>
-            <div id="header" >
-                <div className="box-header">
-                    <div className="profile-card" >
-                        <div className="image" />
-                        <div className="info">
-                            <div className="title">Zharavin Arkady</div>
-                            <div className="description">frontent-developer of the company <img width={150} height={18} src={require('../../images/citronium.png')} alt="Citronium" />, 24 y.o.</div>
-                            <div className="description"><strong>My skills:</strong> TS, JS, React, RN, AngularJS, Redux, HTML5, CSS3, SASS, Webpack, git, etc.</div>
-                            <div className="melody">
-                                {PHONE.map((item: string, key: number) => (
-                                    <div key={key} className="note">{item}</div>
-                                ))}
-                            </div>
-                        </div>
-
-
-                        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
-                            <div className="player" onClick={handleClick}>
-                                <div className="music-title" style={{ color }}>My top music today</div>
-                                <canvas ref={canvas} />
-                            </div>
-                            <div className="player" onClick={handleClick}>
-                                <div className="back-side-flip">
-                                    <div className="music-title" style={{ color }}>Author: {track!.author}</div>
-                                    <div className="music-title" style={{ color }}>Title: "{track!.title}"</div>
-                                    <NoteSvg color={color} />
-                                </div>
-                            </div>
-                        </ReactCardFlip>
-
-                    </div>
-                    <MenuOptions color={color} />
-                </div>
-                <div className="type-text" style={{ color }}>
-                    <Typical
-                        steps={MESSAGES}
-                        loop={Infinity}
-                        wrapper="div"
-                    />
+        <div id="header" >
+            <div className="fasteners">
+                <Cable length={30} color={color} />
+                <div style={{ marginRight: 150, zIndex: 4 }}>
+                    <Cable length={30} color={color} />
                 </div>
             </div>
-        </>
+            <div className="box-header">
+                <div className="profile-card" >
+
+                    <ProfileInfo />
+
+                    <AudioPlayer color={color} setColor={setColor}/>
+
+                </div>
+                <MenuOptions color={color} />
+            </div>
+            <div className="type-text" style={{ color }}>
+                <Typical
+                    steps={MESSAGES}
+                    loop={Infinity}
+                    wrapper="div"
+                />
+            </div>
+        </div>
     );
 }
 

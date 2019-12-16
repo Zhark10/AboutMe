@@ -5,16 +5,22 @@
     width: 100%;
 }
 
+.fasteners {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .box-header {
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    margin-top: 32px;
 }
 
 .profile-card {
     padding: 32px;
+    padding-top: 60px;
     display: flex;
     align-content: center;
     justify-content: space-between;
@@ -23,44 +29,6 @@
     max-width: 70%;
     border-radius: 32px 0 0 32px;
     background-color: rgba(245, 215, 110, 1);
-}
-
-.info {
-    height: 300px;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.title {
-    display: flex;
-    margin: 0 0 14px 0;
-    justify-content: center;
-    font-size: 54px;
-    color: rgba(0, 0, 0);
-}
-
-.description {
-    justify-content: center;
-    width: 100%;
-    margin: 14px 0;
-    font-size: 24px;
-    color: rgba(0, 0, 0);
-}
-
-.image {
-    background-image: url('../../images/face.png');
-    background-size: cover;
-    min-width: 265px;
-    min-height: 300px;
-    border-radius: 50%;
-}
-
-.melody {
-    display: flex;
-    widows: 100%;
-    margin: 18px 0 0 0;
 }
 
 .note {

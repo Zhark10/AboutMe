@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ColorProvider from './content/ColorProvider/ColorProvider';
+import ColorProvider from './ColorProvider';
 
 ReactDOM.render(
     <ColorProvider>

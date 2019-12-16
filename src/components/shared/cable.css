@@ -1,0 +1,19 @@
+.cable {
+    width: 24px;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    width: 6px;
+    height: 100%;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    border: 4px solid #000;
+    position: absolute;
+}
