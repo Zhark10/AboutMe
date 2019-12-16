@@ -1,13 +1,13 @@
 import { COLORS } from "../global/colors";
 
-export const matrixRun = (color: string) => {
+export const matrixRun = (color?: string) => {
     let canvas: any = document.querySelector("#matrix");
 
     let ctx = canvas.getContext('2d');
     let letters: any = '01';
     let height = canvas.height = window.innerHeight;
     let width = canvas.width = window.innerWidth;
-    let font_size = 10;
+    let font_size = 12;
     let columns = width / font_size;
     let drops: any = [];
     let frame = 1;

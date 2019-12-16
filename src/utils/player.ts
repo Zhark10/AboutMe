@@ -10,19 +10,20 @@ const INITIAL = {
 
 export const initAudioPlayer = (musicSrc: any, ref: React.RefObject<HTMLCanvasElement>, setColor: any) => {
 
-    const audio = new Audio();
-    const context = new (window.AudioContext)();
-    const source = context.createMediaElementSource(audio);
-    const analyser = context.createAnalyser();
-    const frequency_array = new Uint8Array(analyser.frequencyBinCount);
+    let audio = new Audio(musicSrc);
+    audio.addEventListener("ended", () => audio.play());
+    audio.addEventListener('loadeddata', () => {
+        audio.play();
+        const context = new (window.AudioContext)();
+        const source = context.createMediaElementSource(audio);
+        const analyser = context.createAnalyser();
+        const frequency_array = new Uint8Array(analyser.frequencyBinCount);
 
-    audio.src = musicSrc;
-    audio.play();
+        source.connect(analyser);
+        analyser.connect(context.destination);
 
-    source.connect(analyser);
-    analyser.connect(context.destination);
-
-    animationLooper(ref, analyser, frequency_array, setColor);
+        animationLooper(ref, analyser, frequency_array, setColor);
+    }, false);
 }
 
 function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: AnalyserNode, frequency_array: Uint8Array, setColor: any) {
@@ -55,7 +56,7 @@ function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: A
             INITIAL.bar_width = 1
             INITIAL.lineColor = COLORS.main
             setColor(COLORS.main);
-            
+
         } else if (randomRadius > 55 && randomRadius < 65) {
             INITIAL.bar_width = 3
             INITIAL.lineColor = 'blue'

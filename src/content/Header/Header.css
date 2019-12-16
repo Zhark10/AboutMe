@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 50vh;
 }
 
 .box-header {
@@ -11,7 +10,7 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-    margin: 16px;
+    margin-top: 32px;
 }
 
 .profile-card {
@@ -73,6 +72,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgba(245, 215, 110, 1);
+
 }
 
 .note:hover {
@@ -82,19 +83,14 @@
 
 .type-text {
     z-index: 2;
+    margin: 16px;
     width: 70%;
-    height: 20px;
     font-size: 24px;
     display: flex;
     justify-content: center;
     align-content: center;
-    padding: 10px;
     font-weight: 500;
     color: rgba(245, 215, 110, 1);
-}
-
-.type-text p {
-    margin: 0;
 }
 
 .music-title {
@@ -109,16 +105,16 @@
 }
 
 .player {
-    height: 324px;
+    height: 330px;
     width: 300px;
     background: #000;
     cursor: pointer;
-    border: 4px solid #000;
 }
 
-.player:hover {
-    border: 4px solid red;
-}
+/* .player:hover {
+    transition: 0.2s;
+    transform: rotateX(20deg);
+} */
 
 .back-side-flip {
     width: 100%;
@@ -127,4 +123,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.svg-icon {
+    margin: 16px;
 }
