@@ -1,5 +1,3 @@
-import { COLORS } from "../global/colors";
-
 export const matrixRun = (color?: string) => {
     let canvas: any = document.querySelector("#matrix");
 
@@ -7,7 +5,7 @@ export const matrixRun = (color?: string) => {
     let letters: any = '01';
     let height = canvas.height = window.innerHeight;
     let width = canvas.width = window.innerWidth;
-    let font_size = 12;
+    let font_size = 16;
     let columns = width / font_size;
     let drops: any = [];
     let frame = 1;
@@ -33,7 +31,7 @@ export const matrixRun = (color?: string) => {
     }
 
     function showLetters() {
-        ctx.fillStyle = COLORS.main;
+        ctx.fillStyle = 'rgba(245, 215, 110, 0.4)';
         ctx.font = font_size + "px arial";
 
         for (let i = 0; i < drops.length; i++) {

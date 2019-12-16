@@ -42,17 +42,17 @@ const Header: React.FC = () => {
     return (
         track &&
         <>
-            <div id="header">
+            <div id="header" >
                 <div className="box-header">
-                    <div className="profile-card" style={{ borderLeftWidth: '5px', borderLeftColor: 'red' }}>
+                    <div className="profile-card" >
                         <div className="image" />
                         <div className="info">
                             <div className="title">Zharavin Arkady</div>
                             <div className="description">frontent-developer of the company <img width={150} height={18} src={require('../../images/citronium.png')} alt="Citronium" />, 24 y.o.</div>
                             <div className="description"><strong>My skills:</strong> TS, JS, React, RN, AngularJS, Redux, HTML5, CSS3, SASS, Webpack, git, etc.</div>
                             <div className="melody">
-                                {PHONE.map((item: string) => (
-                                    <div className="note">{item}</div>
+                                {PHONE.map((item: string, key: number) => (
+                                    <div key={key} className="note">{item}</div>
                                 ))}
                             </div>
                         </div>

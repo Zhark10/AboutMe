@@ -103,3 +103,10 @@ code {
   border-radius: 50%;
   height: 10px;
 }
+
+::selection {
+  background: transparent;
+}
+::-moz-selection {
+  background: transparent;
+}
