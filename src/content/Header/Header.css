@@ -20,7 +20,7 @@
 
 .profile-card {
     padding: 32px;
-    padding-top: 60px;
+    padding-top: 45px;
     display: flex;
     align-content: center;
     justify-content: space-between;
@@ -41,7 +41,6 @@
     justify-content: center;
     align-items: center;
     color: rgba(245, 215, 110, 1);
-
 }
 
 .note:hover {
@@ -61,38 +60,10 @@
     color: rgba(245, 215, 110, 1);
 }
 
-.music-title {
-    font-size: 24px;
-    font-weight: 500;
-    align-items: center;
-    cursor: pointer;
-    padding-top: 16px;
-    text-align: center;
-    background-color: #000;
-    color: rgba(245, 215, 110, 1);
-}
-
-.player {
-    height: 330px;
-    width: 300px;
-    background: #000;
-    cursor: pointer;
-}
-
-/* .player:hover {
-    transition: 0.2s;
-    transform: rotateX(20deg);
-} */
-
-.back-side-flip {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .svg-icon {
     margin: 16px;
 }
+
+/* * {
+    border: 1px solid red;
+} */

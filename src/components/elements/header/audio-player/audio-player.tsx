@@ -1,18 +1,14 @@
-import React, { FC, useEffect, useState, useRef } from 'react';
+import React, { FC, useEffect, useState, useRef, useContext } from 'react';
 import './audio-player.css';
 import ReactCardFlip from 'react-card-flip';
 import NoteSvg from '../note-svg/note-svg';
 import { initAudioPlayer } from '../../../../utils/player';
 import { TRACKS } from '../../../../content/Header/models/models';
 import { ITrack } from '../../../../content/Header/models/models.types';
+import { ColorContext } from '../../../../ColorProvider';
 
-type Props = {
-    color: string;
-    setColor: any;
-}
-
-const AudioPlayer: FC<Props> = ({ color, setColor }) => {
-
+const AudioPlayer: FC = () => {
+    const { theme: [color, setColor] } = useContext(ColorContext as any);
     const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
     const [isFlipped, setFlipped] = useState(false);
     const [track, setTrack] = useState(null as ITrack | null);

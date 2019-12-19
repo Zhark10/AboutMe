@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './First.css';
 import Header from '../../content/Header/Header';
+import Main from '../../content/Main/Main';
 
 const First: React.FC = () => {
 
@@ -18,7 +19,6 @@ const First: React.FC = () => {
       <canvas id="matrix" />
       <div className="first-content">
         <Header />
-        {/* <Main /> */}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import './profile-info.css';
 import { PHONE } from '../../../../content/Header/models/models';
 
-const ProfileInfo: FC = ({ }) => (
+const ProfileInfo = () => (
     <>
         <div className="image" />
         <div className="info">

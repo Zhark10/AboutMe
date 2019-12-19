@@ -3,8 +3,8 @@ import { COLORS } from "../global/colors";
 const INITIAL = {
     bars: 150,
     bar_width: 5,
-    canvasWidth: 300,
-    canvasHeight: 280,
+    canvasWidth: window.innerWidth / 7.8,
+    canvasHeight: window.innerWidth  / 8,
     lineColor: COLORS.main,
 }
 
@@ -48,16 +48,16 @@ function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: A
         //divide a circle into equal parts
         const rads = Math.PI * 2 / INITIAL.bars;
 
-        const bar_height = frequency_array[i] * 0.3;
-        const randomRadius = frequency_array[20] * 0.3;
+        const bar_height = frequency_array[i] * 0.23;
+        const randomRadius = frequency_array[20] * 0.23;
 
         // if(frequency_array[])
-        if (randomRadius < 55) {
+        if (randomRadius < 36) {
             INITIAL.bar_width = 1
             INITIAL.lineColor = COLORS.main
             setColor(COLORS.main);
 
-        } else if (randomRadius > 55 && randomRadius < 65) {
+        } else if (randomRadius > 36 && randomRadius < 46) {
             INITIAL.bar_width = 3
             INITIAL.lineColor = 'blue'
             setColor('blue');
