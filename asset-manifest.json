@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Zhark10/about_me/static/css/main.0876249c.chunk.css",
-    "main.js": "/Zhark10/about_me/static/js/main.58ba81c4.chunk.js",
-    "main.js.map": "/Zhark10/about_me/static/js/main.58ba81c4.chunk.js.map",
-    "runtime-main.js": "/Zhark10/about_me/static/js/runtime-main.0bffa468.js",
-    "runtime-main.js.map": "/Zhark10/about_me/static/js/runtime-main.0bffa468.js.map",
-    "static/js/2.082aa807.chunk.js": "/Zhark10/about_me/static/js/2.082aa807.chunk.js",
-    "static/js/2.082aa807.chunk.js.map": "/Zhark10/about_me/static/js/2.082aa807.chunk.js.map",
-    "index.html": "/Zhark10/about_me/index.html",
-    "precache-manifest.4816761bd227f2988e50fb2ed9069765.js": "/Zhark10/about_me/precache-manifest.4816761bd227f2988e50fb2ed9069765.js",
-    "service-worker.js": "/Zhark10/about_me/service-worker.js",
-    "static/css/main.0876249c.chunk.css.map": "/Zhark10/about_me/static/css/main.0876249c.chunk.css.map",
-    "static/media/AUSLÄNDER.mp3": "/Zhark10/about_me/static/media/AUSLÄNDER.2861a796.mp3",
-    "static/media/Alter_Ego.mp3": "/Zhark10/about_me/static/media/Alter_Ego.ec10a340.mp3",
-    "static/media/Ghinzu.mp3": "/Zhark10/about_me/static/media/Ghinzu.4cab55a4.mp3",
-    "static/media/JetSex.mp3": "/Zhark10/about_me/static/media/JetSex.ab8aa965.mp3",
-    "static/media/citronium.png": "/Zhark10/about_me/static/media/citronium.7ee7904d.png",
-    "static/media/profile-info.css": "/Zhark10/about_me/static/media/face.0ea36c12.png"
+    "main.css": "/about_me/static/css/main.fb89e095.chunk.css",
+    "main.js": "/about_me/static/js/main.ade6fad7.chunk.js",
+    "main.js.map": "/about_me/static/js/main.ade6fad7.chunk.js.map",
+    "runtime-main.js": "/about_me/static/js/runtime-main.9fe25567.js",
+    "runtime-main.js.map": "/about_me/static/js/runtime-main.9fe25567.js.map",
+    "static/js/2.082aa807.chunk.js": "/about_me/static/js/2.082aa807.chunk.js",
+    "static/js/2.082aa807.chunk.js.map": "/about_me/static/js/2.082aa807.chunk.js.map",
+    "index.html": "/about_me/index.html",
+    "precache-manifest.051e37df53ab45f1d4faa873c0be8113.js": "/about_me/precache-manifest.051e37df53ab45f1d4faa873c0be8113.js",
+    "service-worker.js": "/about_me/service-worker.js",
+    "static/css/main.fb89e095.chunk.css.map": "/about_me/static/css/main.fb89e095.chunk.css.map",
+    "static/media/AUSLÄNDER.mp3": "/about_me/static/media/AUSLÄNDER.2861a796.mp3",
+    "static/media/Alter_Ego.mp3": "/about_me/static/media/Alter_Ego.ec10a340.mp3",
+    "static/media/Ghinzu.mp3": "/about_me/static/media/Ghinzu.4cab55a4.mp3",
+    "static/media/JetSex.mp3": "/about_me/static/media/JetSex.ab8aa965.mp3",
+    "static/media/citronium.png": "/about_me/static/media/citronium.7ee7904d.png",
+    "static/media/profile-info.css": "/about_me/static/media/face.0ea36c12.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0bffa468.js",
+    "static/js/runtime-main.9fe25567.js",
     "static/js/2.082aa807.chunk.js",
-    "static/css/main.0876249c.chunk.css",
-    "static/js/main.58ba81c4.chunk.js"
+    "static/css/main.fb89e095.chunk.css",
+    "static/js/main.ade6fad7.chunk.js"
   ]
 }
