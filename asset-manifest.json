@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Zhark10/about_me/build/static/css/main.1b16cb0f.chunk.css",
-    "main.js": "/Zhark10/about_me/build/static/js/main.0aee8a55.chunk.js",
-    "main.js.map": "/Zhark10/about_me/build/static/js/main.0aee8a55.chunk.js.map",
-    "runtime-main.js": "/Zhark10/about_me/build/static/js/runtime-main.1fae9a92.js",
-    "runtime-main.js.map": "/Zhark10/about_me/build/static/js/runtime-main.1fae9a92.js.map",
-    "static/js/2.082aa807.chunk.js": "/Zhark10/about_me/build/static/js/2.082aa807.chunk.js",
-    "static/js/2.082aa807.chunk.js.map": "/Zhark10/about_me/build/static/js/2.082aa807.chunk.js.map",
-    "index.html": "/Zhark10/about_me/build/index.html",
-    "precache-manifest.e1f3a0c9046affbc2021d0c5aeca0d88.js": "/Zhark10/about_me/build/precache-manifest.e1f3a0c9046affbc2021d0c5aeca0d88.js",
-    "service-worker.js": "/Zhark10/about_me/build/service-worker.js",
-    "static/css/main.1b16cb0f.chunk.css.map": "/Zhark10/about_me/build/static/css/main.1b16cb0f.chunk.css.map",
-    "static/media/AUSLÄNDER.mp3": "/Zhark10/about_me/build/static/media/AUSLÄNDER.2861a796.mp3",
-    "static/media/Alter_Ego.mp3": "/Zhark10/about_me/build/static/media/Alter_Ego.ec10a340.mp3",
-    "static/media/Ghinzu.mp3": "/Zhark10/about_me/build/static/media/Ghinzu.4cab55a4.mp3",
-    "static/media/JetSex.mp3": "/Zhark10/about_me/build/static/media/JetSex.ab8aa965.mp3",
-    "static/media/citronium.png": "/Zhark10/about_me/build/static/media/citronium.7ee7904d.png",
-    "static/media/profile-info.css": "/Zhark10/about_me/build/static/media/face.0ea36c12.png"
+    "main.css": "/Zhark10/about_me/static/css/main.0876249c.chunk.css",
+    "main.js": "/Zhark10/about_me/static/js/main.58ba81c4.chunk.js",
+    "main.js.map": "/Zhark10/about_me/static/js/main.58ba81c4.chunk.js.map",
+    "runtime-main.js": "/Zhark10/about_me/static/js/runtime-main.0bffa468.js",
+    "runtime-main.js.map": "/Zhark10/about_me/static/js/runtime-main.0bffa468.js.map",
+    "static/js/2.082aa807.chunk.js": "/Zhark10/about_me/static/js/2.082aa807.chunk.js",
+    "static/js/2.082aa807.chunk.js.map": "/Zhark10/about_me/static/js/2.082aa807.chunk.js.map",
+    "index.html": "/Zhark10/about_me/index.html",
+    "precache-manifest.4816761bd227f2988e50fb2ed9069765.js": "/Zhark10/about_me/precache-manifest.4816761bd227f2988e50fb2ed9069765.js",
+    "service-worker.js": "/Zhark10/about_me/service-worker.js",
+    "static/css/main.0876249c.chunk.css.map": "/Zhark10/about_me/static/css/main.0876249c.chunk.css.map",
+    "static/media/AUSLÄNDER.mp3": "/Zhark10/about_me/static/media/AUSLÄNDER.2861a796.mp3",
+    "static/media/Alter_Ego.mp3": "/Zhark10/about_me/static/media/Alter_Ego.ec10a340.mp3",
+    "static/media/Ghinzu.mp3": "/Zhark10/about_me/static/media/Ghinzu.4cab55a4.mp3",
+    "static/media/JetSex.mp3": "/Zhark10/about_me/static/media/JetSex.ab8aa965.mp3",
+    "static/media/citronium.png": "/Zhark10/about_me/static/media/citronium.7ee7904d.png",
+    "static/media/profile-info.css": "/Zhark10/about_me/static/media/face.0ea36c12.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1fae9a92.js",
+    "static/js/runtime-main.0bffa468.js",
     "static/js/2.082aa807.chunk.js",
-    "static/css/main.1b16cb0f.chunk.css",
-    "static/js/main.0aee8a55.chunk.js"
+    "static/css/main.0876249c.chunk.css",
+    "static/js/main.58ba81c4.chunk.js"
   ]
 }
