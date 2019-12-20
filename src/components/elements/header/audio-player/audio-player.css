@@ -1,0 +1,31 @@
+.music-title {
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 16px;
+    text-align: center;
+    background-color: #000;
+    color: rgba(245, 215, 110, 1);
+}
+
+.player {
+    height: 15vw;
+    width: 13vw;
+    background: #000;
+    cursor: pointer;
+}
+
+/* .player:hover {
+    transition: 0.2s;
+    transform: rotateX(20deg);
+} */
+
+.back-side-flip {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
