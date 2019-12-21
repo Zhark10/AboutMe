@@ -4,6 +4,7 @@ import Header from '../AboutMePage/content/Header/Header';
 import { matrixRun } from '../../utils/matrix';
 import { ColorContext } from '../../ColorProvider';
 import Main from '../AboutMePage/content/Main/Main';
+import DraggablePlayer from '../../components/elements/header/audio-player/draggable-player';
 
 const MainPage: React.FC = () => {
   const { theme: [color] } = useContext(ColorContext as any);
@@ -13,7 +14,7 @@ const MainPage: React.FC = () => {
     // handleScroll(e, "target2")
   }
 
-  useEffect(()=>matrixRun(canvas), []);
+  useEffect(() => matrixRun(canvas), []);
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll, true);
@@ -22,10 +23,11 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="main-page" id="target1">
-      <canvas ref={canvas} id="matrix"/>
-        <Header />
-        <Main />
-    </div>
+      <DraggablePlayer />
+      <canvas ref={canvas} id="matrix" />
+      <Header />
+      <Main />
+    </div >
   );
 }
 
