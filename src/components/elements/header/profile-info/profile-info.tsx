@@ -1,6 +1,6 @@
 import React from 'react';
 import './profile-info.css';
-import { PHONE } from '../../../../content/Header/models/models';
+import { PHONE } from '../../../../pages/AboutMePage/content/Header/models/models';
 
 const ProfileInfo = () => (
     <>

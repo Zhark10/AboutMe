@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import './Header.css';
 import Typical from 'react-typical';
-import MenuOptions from '../../components/elements/header/menu-options/menu-options';
+import MenuOptions from '../../../../components/elements/header/menu-options/menu-options';
 import { MESSAGES } from './models/models';
-import { ColorContext } from '../../ColorProvider';
-import Cable from '../../components/shared/cable';
-import ProfileInfo from '../../components/elements/header/profile-info/profile-info';
-import AudioPlayer from '../../components/elements/header/audio-player/audio-player';
+import { ColorContext } from '../../../../ColorProvider';
+import Cable from '../../../../components/shared/cable';
+import ProfileInfo from '../../../../components/elements/header/profile-info/profile-info';
+import AudioPlayer from '../../../../components/elements/header/audio-player/audio-player';
 
 const Header: React.FC = () => {
 

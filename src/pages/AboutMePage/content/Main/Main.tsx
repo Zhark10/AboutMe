@@ -1,7 +1,7 @@
 import React from 'react';
 import './Main.css';
-import { handleScroll } from '../../utils/scroll';
-import Cable from '../../components/shared/cable';
+import { handleScroll } from '../../../../utils/scroll';
+import Cable from '../../../../components/shared/cable';
 
 
 const Main: React.FC = () => {

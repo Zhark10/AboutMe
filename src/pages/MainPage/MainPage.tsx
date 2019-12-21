@@ -1,9 +1,9 @@
 import React, { useEffect, useContext, useRef } from 'react';
 import './MainPage.css';
-import Header from '../../content/Header/Header';
+import Header from '../AboutMePage/content/Header/Header';
 import { matrixRun } from '../../utils/matrix';
 import { ColorContext } from '../../ColorProvider';
-import Main from '../../content/Main/Main';
+import Main from '../AboutMePage/content/Main/Main';
 
 const MainPage: React.FC = () => {
   const { theme: [color] } = useContext(ColorContext as any);

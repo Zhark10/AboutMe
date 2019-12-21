@@ -3,8 +3,8 @@ import './audio-player.css';
 import ReactCardFlip from 'react-card-flip';
 import NoteSvg from '../note-svg/note-svg';
 import { initAudioPlayer } from '../../../../utils/player';
-import { TRACKS } from '../../../../content/Header/models/models';
-import { ITrack } from '../../../../content/Header/models/models.types';
+import { TRACKS } from '../../../../pages/AboutMePage/content/Header/models/models';
+import { ITrack } from '../../../../pages/AboutMePage/content/Header/models/models.types';
 import { ColorContext } from '../../../../ColorProvider';
 
 const AudioPlayer: FC = () => {
