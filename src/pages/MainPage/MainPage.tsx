@@ -1,10 +1,11 @@
 import React, { useEffect, useContext, useRef } from 'react';
-import './First.css';
+import './MainPage.css';
 import Header from '../../content/Header/Header';
 import { matrixRun } from '../../utils/matrix';
 import { ColorContext } from '../../ColorProvider';
+import Main from '../../content/Main/Main';
 
-const First: React.FC = () => {
+const MainPage: React.FC = () => {
   const { theme: [color] } = useContext(ColorContext as any);
   const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
 
@@ -20,13 +21,12 @@ const First: React.FC = () => {
   }, [])
 
   return (
-    <div className="first" id="target1">
+    <div className="main-page" id="target1">
       <canvas ref={canvas} id="matrix"/>
-      <div className="first-content">
         <Header />
-      </div>
+        <Main />
     </div>
   );
 }
 
-export default First;
+export default MainPage;

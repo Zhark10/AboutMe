@@ -1,6 +1,5 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
-import { matrixRun } from '../../utils/matrix';
 import Typical from 'react-typical';
 import MenuOptions from '../../components/elements/header/menu-options/menu-options';
 import { MESSAGES } from './models/models';
@@ -16,9 +15,9 @@ const Header: React.FC = () => {
     return (
         <div id="header" >
             <div className="fasteners">
-                <Cable length={30} color={color} />
+                <Cable length={30} color={color} bottomDot/>
                 <div style={{ marginRight: 150, zIndex: 4 }}>
-                    <Cable length={30} color={color} />
+                    <Cable length={30} color={color} bottomDot/>
                 </div>
             </div>
             <div className="box-header">
@@ -28,13 +27,13 @@ const Header: React.FC = () => {
                 </div>
                 <MenuOptions color={color} />
             </div>
-            <div className="type-text" style={{ color }}>
+            {/* <div className="type-text" style={{ color }}>
                 <Typical
                     steps={MESSAGES}
                     loop={Infinity}
                     wrapper="div"
                 />
-            </div>
+            </div> */}
         </div>
     );
 }

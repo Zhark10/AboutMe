@@ -18,8 +18,8 @@ const AudioPlayer: FC = () => {
             initAudioPlayer(track.src, canvas, setColor)
             setTimeout(() => {
                 setFlipped(true);
-                setTimeout(() => setFlipped(false), 2000);
-            }, 2000);
+                setTimeout(() => setFlipped(false), 4000);
+            }, 4000);
         } else {
             let current = TRACKS[Math.floor(Math.random() * TRACKS.length)];
             setTrack(current)

@@ -1,7 +1,14 @@
 .first-content {
     width: 100vw;
-    height: 50vh;
-    background-color: rgba(245, 215, 110, 1);
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+}
+
+.my-custom-box {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
 }
 
 .moto {
