@@ -5,11 +5,6 @@
     justify-content: center;
 }
 
-.my-custom-box {
-    width: 80vw;
-    display: flex;
-    justify-content: center;
-}
 
 .moto {
     background-image: url('../../../../images/moto.png');
