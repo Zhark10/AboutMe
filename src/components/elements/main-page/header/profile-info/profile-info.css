@@ -24,7 +24,7 @@
 }
 
 .image {
-    background-image: url('../../../../images/face.png');
+    background-image: url('../../../../../images/face.png');
     background-size: cover;
     min-width: 13vw;
     min-height: 15vw;

@@ -1,0 +1,22 @@
+.clock {
+    position: absolute;
+    top: 0;
+    left: 25vw; 
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analog-clock {
+    background-color: rgba(245, 215, 110, 1);
+    border-radius: 50%;
+    margin: 2px;
+    border: 10px solid rgba(245, 215, 110, 1);
+    min-width: 10vw !important;
+    min-height: 10vw !important;
+}
+
+.react-clock__second-hand__body {
+    background-color: #000 !important;
+}

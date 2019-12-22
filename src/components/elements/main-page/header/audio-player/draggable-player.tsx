@@ -6,7 +6,7 @@ const DraggablePlayer = () => {
     return (
         <Draggable
             handle=".handle-player"
-            defaultPosition={{ x: 0, y: 0 }}>
+            defaultPosition={{ x: 10, y: 10 }}>
             <div className='draggable-player'>
                 <div className="handle-player">Drag from here</div>
             </div>

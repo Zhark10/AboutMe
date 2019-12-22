@@ -1,7 +1,7 @@
 import React from 'react';
 import './Main.css';
 import { handleScroll } from '../../../../utils/scroll';
-import CustomBox from '../../../../components/elements/main/custom-box/custom-box';
+import CustomBox from '../../../../components/elements/main-page/main/custom-box/custom-box';
 
 const Main: React.FC = () => {
     return (

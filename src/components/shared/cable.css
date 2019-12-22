@@ -8,6 +8,7 @@
 .line {
     width: 6px;
     height: 100%;
+    background-color: #000;
 }
 
 .dot {

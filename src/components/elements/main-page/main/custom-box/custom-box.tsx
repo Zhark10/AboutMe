@@ -1,6 +1,6 @@
 import React from 'react';
 import './custom-box.css';
-import Cable from '../../../shared/cable';
+import Cable from '../../../../shared/cable';
 import Draggable from 'react-draggable';
 
 const CustomBox = () => (
