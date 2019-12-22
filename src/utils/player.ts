@@ -12,12 +12,12 @@ export const initAudioPlayer = (musicSrc: any, canvasRef: React.RefObject<HTMLCa
     const audio: HTMLAudioElement = audioRef.current!;
     window.AudioContext = window.AudioContext || (window as any).webkitAudioContext;
     const context = new (window as any).AudioContext();
+    audio.src = musicSrc;
     
-    audio.addEventListener('loadeddata', () => {
-        const source = context.createMediaElementSource(audio);
-        const analyser = context.createAnalyser();
+    audio.addEventListener('loadeddata', async () => {
+        const source = await context.createMediaElementSource(audio);
+        const analyser = await context.createAnalyser();
         const frequency_array = new Uint8Array(analyser.frequencyBinCount);
-        audio.src = musicSrc;
         audio.play();
         
         source.connect(analyser);
