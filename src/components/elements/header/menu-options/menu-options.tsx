@@ -16,7 +16,7 @@ const MenuOptions: React.FC<Props> = ({ color }) => {
         <div className="menu">
             {options.map((item: { title: string }, key: number) => (
                 <div key={item.title} className="option">
-                    <div className="option-line" style={{backgroundColor: color}}/>
+                    <div className="option-line" style={{ backgroundColor: color }} />
                     <div className="option-text">{item.title}</div>
                 </div>
             ))}

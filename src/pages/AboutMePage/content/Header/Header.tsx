@@ -15,9 +15,9 @@ const Header: React.FC = () => {
     return (
         <div id="header" >
             <div className="fasteners">
-                <Cable length={30} color={color} bottomDot/>
+                <Cable length={30} color={color} bottomDot />
                 <div style={{ marginRight: 150, zIndex: 4 }}>
-                    <Cable length={30} color={color} bottomDot/>
+                    <Cable length={30} color={color} bottomDot />
                 </div>
             </div>
             <div className="box-header">

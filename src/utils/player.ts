@@ -8,21 +8,20 @@ const INITIAL = {
     lineColor: COLORS.main,
 }
 
-export const initAudioPlayer = (musicSrc: any, ref: React.RefObject<HTMLCanvasElement>, setColor: any, audio: HTMLAudioElement) => {
-    audio.src = musicSrc;
+export const initAudioPlayer = (musicSrc: any, canvasRef: React.RefObject<HTMLCanvasElement>, setColor: any, audioRef: React.RefObject<HTMLAudioElement>) => {
+    audioRef.current!.src = musicSrc;
 
-    audio.addEventListener('ended', () => audio.play());
-    audio.addEventListener('loadeddata', () => {
-        audio.play();
+    audioRef.current!.addEventListener('ended', () => audioRef.current!.play());
+    audioRef.current!.addEventListener('loadeddata', () => {
         const context = new (window.AudioContext)();
-        const source = context.createMediaElementSource(audio);
+        const source = context.createMediaElementSource(audioRef.current!);
         const analyser = context.createAnalyser();
         const frequency_array = new Uint8Array(analyser.frequencyBinCount);
 
         source.connect(analyser);
         analyser.connect(context.destination);
 
-        animationLooper(ref, analyser, frequency_array, setColor);
+        animationLooper(canvasRef, analyser, frequency_array, setColor);
     }, false);
 }
 

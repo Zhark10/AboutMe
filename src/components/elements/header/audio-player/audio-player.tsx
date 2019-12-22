@@ -8,14 +8,16 @@ import { ITrack } from '../../../../pages/AboutMePage/content/Header/models/mode
 import { ColorContext } from '../../../../ColorProvider';
 
 const AudioPlayer: FC = () => {
-    const audio: HTMLAudioElement = new Audio();
-    const { theme: [color, setColor] } = useContext(ColorContext as any);
+    const audio: React.RefObject<HTMLAudioElement> = useRef(null)
     const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
+
+    const { theme: [color, setColor] } = useContext(ColorContext as any);
     const [isFlipped, setFlipped] = useState(false);
     const [track, setTrack] = useState(null as ITrack | null);
+    const isBrowserSupported = !!(window as any).AudioContext;
 
     useEffect(() => {
-        if (track && track.src) {
+        if (isBrowserSupported && track && track.src) {
             initAudioPlayer(track.src, canvas, setColor, audio)
             setTimeout(() => {
                 setFlipped(true);
@@ -33,20 +35,24 @@ const AudioPlayer: FC = () => {
     }
 
     return (
-        track &&
-        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
-            <div className="player" onClick={handleClick}>
-                <div className="music-title" style={{ color }}>My top music today</div>
-                <canvas ref={canvas} />
-            </div>
-            <div className="player" onClick={handleClick}>
-                <div className="back-side-flip">
-                    <div className="music-title" style={{ color }}>Author: {track!.author}</div>
-                    <div className="music-title" style={{ color }}>Title: "{track!.title}"</div>
-                    <NoteSvg color={color} />
+        isBrowserSupported ?
+            track &&
+            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
+                <div className="player" onClick={handleClick}>
+                    <div className="music-title" style={{ color }}>My top music today</div>
+                    <canvas ref={canvas} />
+                    <audio ref={audio} autoPlay />
                 </div>
-            </div>
-        </ReactCardFlip>
+                <div className="player" onClick={handleClick}>
+                    <div className="back-side-flip">
+                        <div className="music-title" style={{ color }}>Author: {track!.author}</div>
+                        <div className="music-title" style={{ color }}>Title: "{track!.title}"</div>
+                        <NoteSvg color={color} />
+                    </div>
+                </div>
+            </ReactCardFlip>
+            :
+            <div>Unsupported</div>
     );
 }
 
