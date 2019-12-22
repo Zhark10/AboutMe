@@ -10,14 +10,15 @@ const INITIAL = {
 
 export const initAudioPlayer = (musicSrc: any, canvasRef: React.RefObject<HTMLCanvasElement>, setColor: any, audioRef: React.RefObject<HTMLAudioElement>) => {
     const audio: HTMLAudioElement = audioRef.current!;
-    audio.src = musicSrc;
-    (window as any).AudioContext = (window as any).AudioContext || (window as any).webkitAudioContext;
+    window.AudioContext = window.AudioContext || (window as any).webkitAudioContext;
     const context = new (window as any).AudioContext();
     
     audio.addEventListener('loadeddata', () => {
         const source = context.createMediaElementSource(audio);
         const analyser = context.createAnalyser();
         const frequency_array = new Uint8Array(analyser.frequencyBinCount);
+        audio.src = musicSrc;
+        audio.play();
         
         source.connect(analyser);
         analyser.connect(context.destination);
@@ -27,13 +28,14 @@ export const initAudioPlayer = (musicSrc: any, canvasRef: React.RefObject<HTMLCa
     audio.addEventListener('ended', () => audio.play());
 }
 
-function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: AnalyserNode, frequency_array: Uint8Array, setColor: any) {
-    let ctx = canvas.current!.getContext("2d");
-    let center_x = INITIAL.canvasWidth / 2;
-    let center_y = INITIAL.canvasHeight / 2;
+function animationLooper(canvasRef: React.RefObject<HTMLCanvasElement>, analyser: AnalyserNode, frequency_array: Uint8Array, setColor: any) {
+    const canvas = canvasRef.current!;
+    const ctx = canvas.getContext("2d");
+    const center_x = INITIAL.canvasWidth / 2;
+    const center_y = INITIAL.canvasHeight / 2;
 
-    canvas.current!.width = INITIAL.canvasWidth;
-    canvas.current!.height = INITIAL.canvasHeight;
+    canvas.width = INITIAL.canvasWidth;
+    canvas.height = INITIAL.canvasHeight;
 
     // style the background
     ctx!.fillRect(0, 0, INITIAL.canvasWidth, INITIAL.canvasHeight);
@@ -81,13 +83,11 @@ function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: A
         drawBar(x, y, x_end, y_end, ctx!);
 
     }
-    window.requestAnimationFrame(() => animationLooper(canvas, analyser, frequency_array, setColor));
+    window.requestAnimationFrame(() => animationLooper(canvasRef, analyser, frequency_array, setColor));
 
 }
 
 function drawBar(x1: number, y1: number, x2: number, y2: number, ctx: CanvasRenderingContext2D) {
-
-
     ctx.strokeStyle = INITIAL.lineColor;
     ctx.lineWidth = INITIAL.bar_width;
     ctx.beginPath();

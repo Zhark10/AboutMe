@@ -19,8 +19,9 @@ const AudioPlayer: FC = () => {
     const isBrowserSupported = !!((window as any).AudioContext || (window as any).webkitAudioContext);
 
     useEffect(() => {
-        if (isBrowserSupported && track && track.src) {
-            initAudioPlayer(track.src, canvas, setColor, audio)
+        const isAudioLoaded = isBrowserSupported && track && track.src && audio && canvas;
+        if (isAudioLoaded) {
+            initAudioPlayer(track!.src, canvas, setColor, audio)
             setTimeout(() => {
                 setFlipped(true);
                 setTimeout(() => setFlipped(false), 4000);
@@ -43,7 +44,7 @@ const AudioPlayer: FC = () => {
                     <div className="player" onClick={handleClick}>
                         <div className="music-title" style={{ color }}>My top music today</div>
                         <canvas ref={canvas} />
-                        <audio ref={audio} autoPlay preload={'.load'} />
+                        <audio ref={audio} autoPlay />
                     </div>
                     <div className="player" onClick={handleClick}>
                         <div className="back-side-flip">
