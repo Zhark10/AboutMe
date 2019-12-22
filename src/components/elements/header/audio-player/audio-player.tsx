@@ -8,6 +8,7 @@ import { ITrack } from '../../../../pages/AboutMePage/content/Header/models/mode
 import { ColorContext } from '../../../../ColorProvider';
 
 const AudioPlayer: FC = () => {
+    const audio: HTMLAudioElement = new Audio();
     const { theme: [color, setColor] } = useContext(ColorContext as any);
     const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
     const [isFlipped, setFlipped] = useState(false);
@@ -15,7 +16,7 @@ const AudioPlayer: FC = () => {
 
     useEffect(() => {
         if (track && track.src) {
-            initAudioPlayer(track.src, canvas, setColor)
+            initAudioPlayer(track.src, canvas, setColor, audio)
             setTimeout(() => {
                 setFlipped(true);
                 setTimeout(() => setFlipped(false), 4000);

@@ -8,10 +8,10 @@ const INITIAL = {
     lineColor: COLORS.main,
 }
 
-export const initAudioPlayer = (musicSrc: any, ref: React.RefObject<HTMLCanvasElement>, setColor: any) => {
+export const initAudioPlayer = (musicSrc: any, ref: React.RefObject<HTMLCanvasElement>, setColor: any, audio: HTMLAudioElement) => {
+    audio.src = musicSrc;
 
-    let audio = new Audio(musicSrc);
-    audio.addEventListener("ended", () => audio.play());
+    audio.addEventListener('ended', () => audio.play());
     audio.addEventListener('loadeddata', () => {
         audio.play();
         const context = new (window.AudioContext)();

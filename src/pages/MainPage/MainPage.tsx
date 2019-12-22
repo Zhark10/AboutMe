@@ -26,7 +26,7 @@ const MainPage: React.FC = () => {
       <DraggablePlayer />
       <canvas ref={canvas} id="matrix" />
       <Header />
-      <Main />
+      {/* <Main /> */}
     </div >
   );
 }

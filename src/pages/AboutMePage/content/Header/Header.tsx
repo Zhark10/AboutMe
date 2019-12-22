@@ -27,13 +27,13 @@ const Header: React.FC = () => {
                 </div>
                 <MenuOptions color={color} />
             </div>
-            {/* <div className="type-text" style={{ color }}>
+            <div className="type-text" style={{ color }}>
                 <Typical
                     steps={MESSAGES}
                     loop={Infinity}
                     wrapper="div"
                 />
-            </div> */}
+            </div>
         </div>
     );
 }
