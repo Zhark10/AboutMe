@@ -4,25 +4,27 @@ const INITIAL = {
     bars: 150,
     bar_width: 5,
     canvasWidth: window.innerWidth / 7.8,
-    canvasHeight: window.innerWidth  / 8,
+    canvasHeight: window.innerWidth / 8,
     lineColor: COLORS.main,
 }
 
 export const initAudioPlayer = (musicSrc: any, canvasRef: React.RefObject<HTMLCanvasElement>, setColor: any, audioRef: React.RefObject<HTMLAudioElement>) => {
-    audioRef.current!.src = musicSrc;
-
-    audioRef.current!.addEventListener('ended', () => audioRef.current!.play());
-    audioRef.current!.addEventListener('loadeddata', () => {
-        const context = new (window.AudioContext)();
-        const source = context.createMediaElementSource(audioRef.current!);
+    const audio: HTMLAudioElement = audioRef.current!;
+    audio.src = musicSrc;
+    (window as any).AudioContext = (window as any).AudioContext || (window as any).webkitAudioContext;
+    const context = new (window as any).AudioContext();
+    
+    audio.addEventListener('loadeddata', () => {
+        const source = context.createMediaElementSource(audio);
         const analyser = context.createAnalyser();
         const frequency_array = new Uint8Array(analyser.frequencyBinCount);
-
+        
         source.connect(analyser);
         analyser.connect(context.destination);
-
+        
         animationLooper(canvasRef, analyser, frequency_array, setColor);
     }, false);
+    audio.addEventListener('ended', () => audio.play());
 }
 
 function animationLooper(canvas: React.RefObject<HTMLCanvasElement>, analyser: AnalyserNode, frequency_array: Uint8Array, setColor: any) {
