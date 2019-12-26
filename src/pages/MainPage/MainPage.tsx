@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './MainPage.css';
-import Header from '../AboutMePage/content/Header/Header';
+import Header from './content/Header/Header';
 import { matrixRun } from '../../utils/matrix';
-import DraggablePlayer from '../../components/elements/main-page/header/audio-player/draggable-player';
+import DraggablePlayer from '../../components/elements/main-page/header/draggable-player/draggable-player';
 import DifferentOptions from '../../components/elements/main-page/different-options/different-options';
 
 const MainPage: React.FC = () => {

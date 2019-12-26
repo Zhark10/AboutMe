@@ -1,5 +1,5 @@
 import React from 'react';
-import './audio-player.css';
+import './draggable-player.css';
 import Draggable from 'react-draggable';
 
 const DraggablePlayer = () => {

@@ -1,0 +1,13 @@
+.draggable-player {
+    z-index: 99999;
+    cursor: pointer;
+    border: 4px solid rgba(245, 215, 110, 1);
+    color: rgba(245, 215, 110, 1);
+    background-color: #000;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    position: absolute;
+    padding: 24px;
+    font-size: 16px;
+}
