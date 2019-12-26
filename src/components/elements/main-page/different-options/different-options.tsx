@@ -22,6 +22,7 @@ const DifferentOptions: React.FC = () => {
                 hourMarksWidth={6}
                 hourMarksLength={24}
                 secondHandWidth={5}
+                renderNumbers
             />
         </div>
     );
