@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import MainPage from './pages/MainPage/MainPage';
-import AboutMePage from './pages/AboutMePage/AboutMePage';
+import MainPart from './pages/MainPart/MainPart';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <MainPage />
-      <AboutMePage />
+      <MainPart />
     </div>
   );
 }

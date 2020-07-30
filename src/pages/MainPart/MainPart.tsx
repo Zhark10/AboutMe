@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import './MainPage.css';
+import './MainPart.css';
 import Header from './content/Header/Header';
 import { matrixRun } from '../../utils/matrix';
 import DraggablePlayer from '../../components/elements/main-page/header/draggable-player/draggable-player';
 import DifferentOptions from '../../components/elements/main-page/different-options/different-options';
 
-const MainPage: React.FC = () => {
+const MainPart: React.FC = () => {
   const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
 
   const onScroll = (e: any) => {
@@ -30,4 +30,4 @@ const MainPage: React.FC = () => {
   );
 }
 
-export default MainPage;
+export default MainPart;
