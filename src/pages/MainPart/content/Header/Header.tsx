@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './Header.css';
+import styles from './Header.css';
 import Typical from 'react-typical';
 import MenuOptions from './components/menu-options/menu-options';
 import { MESSAGES } from './models/models';
@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     const { theme: [color] } = useContext(ColorContext as any);
 
     return (
-        <div id="header" >
+        <div id={styles.header} >
             <div className="fasteners">
                 <Cable length={30} color={color} bottomDot />
                 <div style={{ marginRight: 150, zIndex: 4 }}>
