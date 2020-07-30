@@ -2,12 +2,12 @@ import React, { FC, useEffect, useState, useRef, useContext } from 'react';
 import './audio-player.css';
 import ReactCardFlip from 'react-card-flip';
 import NoteSvg from '../note-svg/note-svg';
-import { initAudioPlayer } from '../../../../../utils/player';
-import { TRACKS } from '../../../../../pages/MainPart/content/Header/models/models';
-import { ITrack } from '../../../../../pages/MainPart/content/Header/models/models.types';
-import { ColorContext } from '../../../../../ColorProvider';
+import { initAudioPlayer } from '../../../../../../utils/player';
+import { TRACKS } from '../../models/models';
+import { ITrack } from '../../models/models.types';
+import { ColorContext } from '../../../../../../ColorProvider';
 import Loader from 'react-loader-spinner';
-import { COLORS } from '../../../../../global/colors';
+import { COLORS } from '../../../../../../global/colors';
 
 const AudioPlayer: FC = () => {
     const audio: React.RefObject<HTMLAudioElement> = useRef(null)

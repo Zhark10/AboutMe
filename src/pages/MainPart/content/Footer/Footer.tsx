@@ -1,11 +1,6 @@
 import React, { useContext } from 'react';
-import './Header.css';
-import Typical from 'react-typical';
-import MenuOptions from './components/menu-options/menu-options';
-import { MESSAGES } from './models/models';
+import './Footer.css';
 import { ColorContext } from '../../../../ColorProvider';
-import Cable from '../../../../components/shared/cable';
-import ProfileInfo from './components/profile-info/profile-info';
 
 const Header: React.FC = () => {
 
