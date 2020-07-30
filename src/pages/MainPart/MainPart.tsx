@@ -1,33 +1,32 @@
-import React, { useEffect, useRef } from 'react';
-import './MainPart.css';
-import Header from './content/Header/Header';
-import { matrixRun } from '../../utils/matrix';
-import DraggablePlayer from '../../components/elements/main-page/header/draggable-player/draggable-player';
-import DifferentOptions from '../../components/elements/main-page/different-options/different-options';
+import React, { useEffect, useRef } from "react";
+import "./MainPart.css";
+import Header from "./content/Header/Header";
+import { matrixRun } from "../../utils/matrix";
+import DraggablePlayer from "../../components/elements/main-page/header/draggable-player/draggable-player";
+import { handleScroll } from "../../utils/scroll";
 
 const MainPart: React.FC = () => {
-  const canvas: React.RefObject<HTMLCanvasElement> = useRef(null)
+  const canvas: React.RefObject<HTMLCanvasElement> = useRef(null);
 
   const onScroll = (e: any) => {
-    // handleScroll(e, "target2")
-  }
+    handleScroll(e, "target2");
+  };
 
   useEffect(() => matrixRun(canvas), []);
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll, true);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [])
+    window.addEventListener("scroll", onScroll, true);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="main-page" id="target1">
       <DraggablePlayer />
-      <DifferentOptions />
+      {/* <DifferentOptions /> */}
       <canvas ref={canvas} id="matrix" />
       <Header />
-      {/* <Main /> */}
     </div>
   );
-}
+};
 
 export default MainPart;

@@ -23,7 +23,7 @@ const Header: React.FC = () => {
             <div className="box-header">
                 <div className="profile-card" >
                     <ProfileInfo />
-                    <AudioPlayer />
+                    {/* <AudioPlayer /> */}
                 </div>
                 <MenuOptions color={color} />
             </div>
