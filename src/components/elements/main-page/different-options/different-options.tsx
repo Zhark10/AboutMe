@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './different-options.css';
-import Cable from '../../../shared/cable';
 import Clock from 'react-clock';
 import { ColorContext } from '../../../../ColorProvider';
 
@@ -14,7 +13,6 @@ const DifferentOptions: React.FC = () => {
 
     return (
         <div className='clock'>
-            <Cable length={500} lineStyles={{backgroundColor: color}}/>
             <Clock value={date}
                 className='analog-clock'
                 minuteMarksWidth={1}

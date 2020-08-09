@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
-import  "./profile-info.css";
+import  "./profile-info.scss";
 
 const imageSrc = require("../../../../../../images/citronium.png");
 
@@ -50,7 +50,7 @@ export const ProfileInfo = () => {
         opacity: 0,
         duration: 1000,
         easing: "easeOutExpo",
-        delay: 1000,
+        delay: 5000,
       });
   }, []);
 
