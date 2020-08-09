@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./MainPart.css";
-import Header from "./content/Header/Header";
+import Header from "./content/Header/CardInfo";
 import { matrixRun } from "../../utils/matrix";
 import DraggablePlayer from "./content/Header/components/draggable-player/draggable-player";
 import Footer from "./content/Footer/Footer";
@@ -12,11 +11,18 @@ const MainPart: React.FC = () => {
   useEffect(() => matrixRun(canvas), []);
 
   return (
-    <div className="main-page">
-      <DraggablePlayer />
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <canvas ref={canvas} id="matrix" />
+      <DraggablePlayer />
       <Header />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

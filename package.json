@@ -50,6 +50,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
     "react": "^16.11.0",
+    "react-anime": "^3.0.3",
     "react-app-polyfill": "^1.0.6",
     "react-card-flip": "^1.0.10",
     "react-clock": "^2.4.0",

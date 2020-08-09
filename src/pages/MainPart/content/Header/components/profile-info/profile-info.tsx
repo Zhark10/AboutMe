@@ -9,7 +9,7 @@ const ProfileInfo = () => (
         <div className="image" />
         <div className="info">
             <div className="title">Zharavin Arkady</div>
-            <div className="description">frontent-developer of the company <img width={150} height={18} src={imageSrc} alt="Citronium" />, 24 y.o.</div>
+            <div className="description">frontent-developer of the company <img width={150} height={18} src={imageSrc} alt="Citronium" />, 25 y.o.</div>
             <div className="description"><strong>My skills:</strong> TS, JS, React, RN, AngularJS, Redux, HTML5, CSS3, SASS, Webpack, git, etc.</div>
             <div className="melody">
                 {PHONE.map((item: string, key: number) => (
