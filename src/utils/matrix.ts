@@ -30,7 +30,7 @@ export const matrixRun = (canvas: React.RefObject<HTMLCanvasElement>) => {
     }
 
     function showLetters() {
-        ctx.fillStyle = 'rgba(245, 215, 110, 0.4)';
+        ctx.fillStyle = 'rgba(245, 215, 110, 0.2)';
         ctx.font = font_size + "px arial";
 
         for (let i = 0; i < drops.length; i++) {

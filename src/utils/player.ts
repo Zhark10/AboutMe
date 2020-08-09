@@ -3,8 +3,8 @@ import { COLORS } from "../global/colors";
 const INITIAL = {
     bars: 150,
     bar_width: 5,
-    canvasWidth: window.innerWidth / 7.8,
-    canvasHeight: window.innerWidth / 8,
+    canvasWidth: window.innerHeight * 0.15,
+    canvasHeight: window.innerHeight * 0.15,
     lineColor: COLORS.main,
 }
 
@@ -38,12 +38,12 @@ function animationLooper(canvasRef: React.RefObject<HTMLCanvasElement>, analyser
     canvas.height = INITIAL.canvasHeight;
 
     // style the background
-    ctx!.fillRect(0, 0, INITIAL.canvasWidth, INITIAL.canvasHeight);
+    ctx?.fillRect(0, 0, INITIAL.canvasWidth, INITIAL.canvasHeight);
     ctx!.fillStyle = COLORS.main;
 
     //draw a circle
-    ctx!.beginPath();
-    ctx!.stroke();
+    ctx?.beginPath();
+    ctx?.stroke();
 
     analyser.getByteFrequencyData(frequency_array);
     for (let i: number = 0; i < INITIAL.bars; i++) {
@@ -51,8 +51,8 @@ function animationLooper(canvasRef: React.RefObject<HTMLCanvasElement>, analyser
         //divide a circle into equal parts
         const rads = Math.PI * 2 / INITIAL.bars;
 
-        const bar_height = frequency_array[i] * 0.23;
-        const randomRadius = frequency_array[20] * 0.23;
+        const bar_height = frequency_array[i] * 0.13;
+        const randomRadius = frequency_array[20] * 0.13;
 
         // if(frequency_array[])
         if (randomRadius < 36) {
