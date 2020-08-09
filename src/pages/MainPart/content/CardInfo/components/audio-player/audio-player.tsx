@@ -44,23 +44,33 @@ const AudioPlayer: FC = () => {
 
   return isBrowserSupported ? (
     track ? (
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-        <div className="player" onClick={handleClick}>
-          {/* <div className="music-title" style={{ color }}>
-            My top music today
-          </div> */}
-          <canvas ref={canvas} />
-          <audio ref={audio} autoPlay />
-        </div>
-        <div className="player" onClick={handleClick}>
-          <div className="back-side-flip">
-            <div className="music-title" style={{ color }}>
-              {track!.author}: "{track!.title}"
-            </div>
-            <NoteSvg color={color}/>
+      <>
+        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+          <div className="player" onClick={handleClick}>
+            <canvas ref={canvas} />
+            <audio ref={audio} autoPlay />
           </div>
-        </div>
-      </ReactCardFlip>
+          <div className="player" onClick={handleClick}>
+            <div className="back-side-flip">
+              <div className="music-title" style={{ color, marginBottom: 18 }}>
+                {track!.author}: "{track!.title}"
+              </div>
+              <NoteSvg color={color}/>
+            </div>
+          </div>
+        </ReactCardFlip>
+        <div
+          className="handle-player"
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+          }}
+          onClick={handleClick}
+        />
+      </>
     ) : (
       <div className="player">
         <Loader
