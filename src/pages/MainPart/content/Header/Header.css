@@ -50,22 +50,6 @@
     transition: 0.5s;
 }
 
-.type-text {
-    z-index: 2;
-    margin: 16px;
-    width: 70%;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    font-weight: 500;
-    color: rgba(245, 215, 110, 1);
-}
-
 .svg-icon {
     margin: 16px;
 }
-
-/* * {
-    border: 1px solid red;
-} */

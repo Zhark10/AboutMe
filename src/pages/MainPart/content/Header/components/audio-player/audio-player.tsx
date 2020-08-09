@@ -55,12 +55,9 @@ const AudioPlayer: FC = () => {
         <div className="player" onClick={handleClick}>
           <div className="back-side-flip">
             <div className="music-title" style={{ color }}>
-              Author: {track!.author}
+              {track!.author}: "{track!.title}"
             </div>
-            <div className="music-title" style={{ color }}>
-              Title: "{track!.title}"
-            </div>
-            <NoteSvg color={color} />
+            <NoteSvg color={color}/>
           </div>
         </div>
       </ReactCardFlip>

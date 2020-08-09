@@ -14,13 +14,7 @@ const Header: React.FC = () => {
 
     return (
         <div id="header" >
-            <div className="type-text" style={{ color }}>
-                <Typical
-                    steps={MESSAGES}
-                    loop={Infinity}
-                    wrapper="div"
-                />
-            </div>
+            
         </div>
     );
 }
