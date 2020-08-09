@@ -3,7 +3,7 @@ import './Footer.css';
 
 import { ColorContext } from '../../../../ColorProvider';
 
-const Header: React.FC = () => {
+const Footer: React.FC = () => {
 
     const { theme: [color] } = useContext(ColorContext as any);
 
@@ -14,4 +14,4 @@ const Header: React.FC = () => {
     );
 }
 
-export default Header;
+export default Footer;

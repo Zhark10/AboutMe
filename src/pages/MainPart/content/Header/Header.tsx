@@ -1,31 +1,19 @@
 import React, { useContext } from 'react';
-import styles from './Header.css';
+import './Header.css';
 import Typical from 'react-typical';
 import MenuOptions from './components/menu-options/menu-options';
 import { MESSAGES } from './models/models';
 import { ColorContext } from '../../../../ColorProvider';
 import Cable from '../../../../components/shared/cable';
 import ProfileInfo from './components/profile-info/profile-info';
+import AudioPlayer from './components/audio-player/audio-player';
 
 const Header: React.FC = () => {
 
     const { theme: [color] } = useContext(ColorContext as any);
 
     return (
-        <div id={styles.header} >
-            <div className="fasteners">
-                <Cable length={30} color={color} bottomDot />
-                <div style={{ marginRight: 150, zIndex: 4 }}>
-                    <Cable length={30} color={color} bottomDot />
-                </div>
-            </div>
-            <div className="box-header">
-                <div className="profile-card" >
-                    <ProfileInfo />
-                    {/* <AudioPlayer /> */}
-                </div>
-                <MenuOptions color={color} />
-            </div>
+        <div id="header" >
             <div className="type-text" style={{ color }}>
                 <Typical
                     steps={MESSAGES}
