@@ -1,68 +1,44 @@
 import React, { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
-import  "./profile-info.scss";
+import "./profile-info.scss";
 
 const imageSrc = require("../../../../../../images/citronium.png");
 
 export const ProfileInfo = () => {
   useEffect(() => {
-    anime
-      .timeline({ loop: true })
-      .add({
-        targets: ".ml5 .line",
-        opacity: [0.5, 1],
-        scaleX: [0, 1],
-        easing: "easeInOutExpo",
-        duration: 700,
-      })
-      .add({
-        targets: ".ml5 .line",
-        duration: 600,
-        easing: "easeOutExpo",
-        translateY: (el: any, i: number) => -0.625 + 0.625 * 2 * i + "em",
-      })
-      .add({
-        targets: ".ml5 .ampersand",
-        opacity: [0, 1],
-        scaleY: [0.5, 1],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: "-=600",
-      })
-      .add({
-        targets: ".ml5 .letters-left",
-        opacity: [0, 1],
-        translateX: ["0.5em", 0],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: "-=300",
-      })
-      .add({
-        targets: ".ml5 .letters-right",
-        opacity: [0, 1],
-        translateX: ["-0.5em", 0],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: "-=600",
-      })
-      .add({
-        targets: ".ml5",
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 5000,
-      });
+    anime({
+      targets: ".my-stack .el",
+      translateX: function (el: { getAttribute: (arg0: string) => any }) {
+        return el.getAttribute("data-x");
+      },
+      translateY: function (el: any, i: number) {
+        return 50 + -50 * i;
+      },
+      scale: function (el: any, i: number, l: number) {
+        return l - i + 0.25;
+      },
+      rotate: function () {
+        return anime.random(-360, 360);
+      },
+      borderRadius: function () {
+        return ["50%", anime.random(10, 35) + "%"];
+      },
+      duration: function () {
+        return anime.random(1200, 1800);
+      },
+      delay: function () {
+        return anime.random(0, 400);
+      },
+      direction: "alternate",
+      loop: true,
+    });
   }, []);
 
   return (
-    <h1 className='ml5'>
-      <span className="text-wrapper">
-        <span className="line line1"></span>
-        <span className="letters letters-left">Zharavin</span> 
-        <span> </span>
-        <span className="letters letters-right">Arkady</span>
-        <span className="line line2"></span>
-      </span>
-    </h1>
+    <div className="my-stack">
+      <div className="el" />
+      <div className="el" />
+      <div className="el" />
+    </div>
   );
 };
