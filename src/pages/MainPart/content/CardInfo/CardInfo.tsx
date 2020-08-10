@@ -3,6 +3,7 @@ import { ColorContext } from "../../../../ColorProvider";
 
 import { Ava } from "./components/Ava";
 import { ProfileInfo } from "./components/profile-info/profile-info";
+import { AnimatedName } from "./components/animated-name/animated-name";
 
 const CardInfo: React.FC = () => {
   const {
@@ -18,8 +19,15 @@ const CardInfo: React.FC = () => {
         borderRadius: 8,
       }}
     >
-      <Ava/>
-      <ProfileInfo/>
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
+        <Ava />
+        <ProfileInfo />
+      </div>
+      <AnimatedName />
     </div>
   );
 };
