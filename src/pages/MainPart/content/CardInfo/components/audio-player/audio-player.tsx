@@ -5,7 +5,7 @@ import NoteSvg from "../note-svg/note-svg";
 import { initAudioPlayer } from "../../../../../../utils/player";
 import { TRACKS } from "../../models/models";
 import { ITrack } from "../../models/models.types";
-import { ColorContext } from "../../../../../../ColorProvider";
+import { ColorContext } from "../../../../../../providers/ColorProvider";
 import Loader from "react-loader-spinner";
 import { COLORS } from "../../../../../../global/colors";
 

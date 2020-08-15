@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ColorContext } from "../../../../ColorProvider";
+import { ColorContext } from "../../../../providers/ColorProvider";
 
 import { Ava } from "./components/Ava";
 import { ProfileInfo } from "./components/profile-info/profile-info";

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './Footer.css';
 
-import { ColorContext } from '../../../../ColorProvider';
+import { ColorContext } from '../../../../providers/ColorProvider';
 
 const Footer: React.FC = () => {
 

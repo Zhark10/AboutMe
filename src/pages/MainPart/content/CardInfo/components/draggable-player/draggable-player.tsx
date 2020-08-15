@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./draggable-player.css";
 import AudioPlayer from "../audio-player/audio-player";
-import { ColorContext } from "../../../../../../ColorProvider";
+import { ColorContext } from "../../../../../../providers/ColorProvider";
 import { motion } from "framer-motion";
 
 const DraggablePlayer = () => {

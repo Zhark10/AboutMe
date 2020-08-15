@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './different-options.css';
 import Clock from 'react-clock';
-import { ColorContext } from '../../../../ColorProvider';
+import { ColorContext } from '../../../../providers/ColorProvider';
 
 const DifferentOptions: React.FC = () => {
     const [date, setDate] = useState(new Date());
