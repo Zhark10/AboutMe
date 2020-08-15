@@ -1,20 +1,29 @@
 import React, { useContext } from "react";
 import "./draggable-player.css";
-import Draggable from "react-draggable";
 import AudioPlayer from "../audio-player/audio-player";
 import { ColorContext } from "../../../../../../ColorProvider";
-import { Reference } from "../../../../../../components/shared/note";
+import { motion } from "framer-motion";
 
 const DraggablePlayer = () => {
   const {
     theme: [color],
   } = useContext(ColorContext as any);
   return (
-    <Draggable handle=".handle-player" defaultPosition={{ x: 0, y: 0 }}>
-        <div className="draggable-player" style={{ borderColor: color }}>
-          <AudioPlayer />
-        </div>
-    </Draggable>
+    <motion.div
+      drag
+      dragConstraints={{
+        top: 0,
+        left: 0,
+        right: window.innerWidth,
+        bottom: window.innerHeight,
+      }}
+      className="draggable-player"
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.8 }}
+      style={{ x: 5, y: 5, borderColor: color }}
+    >
+      <AudioPlayer />
+    </motion.div>
   );
 };
 
