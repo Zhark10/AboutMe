@@ -3,11 +3,15 @@ import "./audio-player.css";
 import ReactCardFlip from "react-card-flip";
 import NoteSvg from "../note-svg/note-svg";
 import { initAudioPlayer } from "../../../../../../utils/player";
-import { TRACKS } from "../../models/models";
 import { ITrack } from "../../models/models.types";
 import { ColorContext } from "../../../../../../providers/ColorProvider";
 import Loader from "react-loader-spinner";
 import { COLORS } from "../../../../../../global/colors";
+
+const TRACKS: ITrack[] = [
+  {src: require('../../resources/Alter_Ego.mp3'), author: "N'to", title: "Alter Ego"},
+  {src: require('../../resources/Ghinzu.mp3'), author: "Ghinzu", title: "21st Century Crooners"},
+]
 
 const AudioPlayer: FC = () => {
   const audio: React.RefObject<HTMLAudioElement> = useRef(null);
@@ -24,9 +28,9 @@ const AudioPlayer: FC = () => {
 
   useEffect(() => {
     const isAudioLoaded =
-      isBrowserSupported && track && track.src && audio && canvas;
+      isBrowserSupported && track?.src && audio && canvas;
     if (isAudioLoaded) {
-      initAudioPlayer(track!.src, canvas, setColor, audio);
+      initAudioPlayer(track?.src, canvas, setColor, audio);
       setTimeout(() => {
         setFlipped(true);
         setTimeout(() => setFlipped(false), 4000);

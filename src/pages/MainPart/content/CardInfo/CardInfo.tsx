@@ -25,7 +25,7 @@ const CardInfo: React.FC = () => {
         }}
       >
         <Ava />
-        <ProfileInfo />
+        {/* <ProfileInfo /> */}
       </div>
       <AnimatedName />
     </div>
