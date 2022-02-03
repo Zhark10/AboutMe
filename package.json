@@ -56,7 +56,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-card-flip": "^1.0.10",
     "react-clock": "^2.4.0",
-    "react-dev-utils": "^10.2.1",
+    "react-dev-utils": ">=11.0.4",
     "react-dom": "^16.11.0",
     "react-loader-spinner": "^3.1.5",
     "react-typical": "^0.1.3",
